@@ -2,22 +2,30 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New post</title>
+    <link rel="stylesheet" href="/public/styles/newpost.css">
 </head>
+
 <body>
     <h1>New Post</h1>
     <p>Create a blog of any topic of your choice. You can even upload any images to prove your work.
         Get everything ready set and go click on the "Create Post" and make it public.
     </p>
-    <form action="/new" method="post">
-        <input type="name" placeholder="Name" name="heading" required>
-        <textarea name="content" id="content" placeholder="The content" required></textarea>
-        <input type="text" name="author" placeholder="Author" required>
-        <input type="file" name="file">
-    </form>
-    <input type="submit" value="Create Post">
+    <div class="newpost">
+        <form action="/new" method="post" id="main-form">
+            <input type="name" placeholder="Name" name="heading" required>
+            <textarea name="content" id="content" placeholder="The content" required></textarea>
+            <input type="text" name="author" placeholder="Author" required>
+            <input type="file" name="file">
+        </form>
+
+        <input type="submit" value="Create Post" id="submit">
+    </div>
+
 </body>
+
 </html>

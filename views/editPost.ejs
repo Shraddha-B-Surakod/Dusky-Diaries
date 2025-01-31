@@ -6,16 +6,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Post</title>
+    <link rel="stylesheet" href="/public/styles/editpost.css">
 </head>
 <body>
     <h1>Edit Post</h1>
-    <form action="/edit" method="post">
-        <input type="text" name="editedheading">
-        <textarea name="content" id="editedcontent">
-        </textarea>
-        <input type="text" name="editeauthor">
-        <input type="file" name="editedfile">
-    </form>
-    <input type="submit" value="Save">
+    <div class="editform">
+        <form action="/edit" method="post" class="main-form">
+            <input type="text" name="editedheading" placeholder="Name">
+            <textarea name="content" id="content" placeholder="The content"></textarea>
+            <input type="text" name="editeauthor" placeholder="Author">
+            <input type="file" name="editedfile">
+        </form>
+        <input type="submit" value="Save" id="save">
+    </div>
+    
 </body>
 </html>
