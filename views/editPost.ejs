@@ -1,0 +1,21 @@
+<!-- Editing the posts with the index giving (if it is not there, push) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+</head>
+<body>
+    <h1>Edit Post</h1>
+    <form action="/edit" method="post">
+        <input type="text" name="editedheading">
+        <textarea name="content" id="editedcontent">
+        </textarea>
+        <input type="text" name="editeauthor">
+        <input type="file" name="editedfile">
+    </form>
+    <input type="submit" value="Save">
+</body>
+</html>

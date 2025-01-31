@@ -1,0 +1,32 @@
+<!-- displaying all the posts -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Website</title>
+    <link rel="icon" href="/public/images/bloo.webp">
+    <link rel="stylesheet" href="/public/styles/main.css">
+
+</head>
+<body>
+    <nav>
+        <!-- logo -->
+         <img src="/public/images/bloo.webp" alt="Logo" id="logo">
+         <a href="/">Home</a>
+         <a href="./newPost.ejs">New post</a>
+         <a href="/login">Login</a>
+    </nav>
+
+    <div class="main-post">
+        <div class="post">
+            <%= heading %>
+            <%= content %>
+            <%= author %>
+        </div>
+        <a href="./editPost.ejs">Edit</a>
+        <a href="/delete">Delete</a>
+    </div>
+</body>
+</html>
