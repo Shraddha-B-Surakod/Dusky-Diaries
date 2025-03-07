@@ -1,48 +1,92 @@
-body{
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-h1{
-    text-align: center;
-}
-
-.main-form{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    padding: 10px;
-    gap: 10px;
-}
-
-.editform{
+body {
+    background: #121212;
+    color: #e0e0e0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(227, 226, 226);
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+/* Form Container */
+.editform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #1e1e1e;
     border-radius: 10px;
-    padding: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
 }
 
-input{
-    padding: 10px;
-    outline: 0;
-    border: 0;
+/* Form */
+.main-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
     border-radius: 6px;
+    border: none;
+    background: #2e2e2e;
+    color: #e0e0e0;
     font-size: 0.9rem;
+    outline: none;
 }
 
-textarea{
-    padding: 10px;
-    outline: 0;
-    border: 0;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+textarea {
+    min-height: 100px;
+    resize: vertical;
 }
 
-#save{
+/* Save Button */
+#save {
     background-color: rgb(81, 218, 81);
     color: white;
     font-size: 1.1rem;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#save:hover {
+    background: #66c266;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .editform {
+        max-width: 90%;
+    }
+
+    body {
+        padding: 10px;
+    }
 }

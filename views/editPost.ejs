@@ -1,24 +1,27 @@
-<!-- Editing the posts with the index giving (if it is not there, push) -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Post</title>
-    <link rel="stylesheet" href="/public/styles/editpost.css">
+    <link rel="stylesheet" href="/styles/editpost.css">
 </head>
 <body>
     <h1>Edit Post</h1>
     <div class="editform">
-        <form action="/edit" method="post" class="main-form">
-            <input type="text" name="editedheading" placeholder="Name">
-            <textarea name="content" id="content" placeholder="The content"></textarea>
-            <input type="text" name="editeauthor" placeholder="Author">
-            <input type="file" name="editedfile">
+        <% if(locals.post) { %>
+        <form action="/edit/<%= post.id %>" method="post" class="main-form">
+                <input type="text" name="title" placeholder="Enter title" value="<%= post.title %>">
+                
+                <textarea name="content" id="content" placeholder="Enter content"><%= post.content %></textarea>
+                
+                <input type="text" name="author" placeholder="Enter author" value="<%= post.author %>">
+                
+                <input type="file" name="editedfile">
+
+                <input type="submit" value="Save" id="save">
+        <% } %>
         </form>
-        <input type="submit" value="Save" id="save">
     </div>
-    
 </body>
 </html>

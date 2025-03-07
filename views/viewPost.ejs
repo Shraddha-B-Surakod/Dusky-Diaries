@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View post</title>
+
+    <link rel="stylesheet" href="/styles/viewpost.css">
+
+    <style>
+        img{
+                width: 100px;
+                height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <% if(locals.post){ %>
+        <div>
+            <h3><%= post.title %></h3>
+            <% if (post.file) { %>
+                <% let fileExtension=post.file.split('.').pop().toLowerCase(); %>
+
+                    <% if (['jpg', 'jpeg' , 'png' , 'gif' , 'webp' ].includes(fileExtension)) { %>
+                        <!-- Display images -->
+                        <img src="/uploads/<%= post.file %>" alt="Uploaded Image"
+                            style="max-width: 100%; height: auto;">
+
+                    <% } else if (['mp4', 'webm' , 'ogg' ].includes(fileExtension)) { %>
+                            <!-- Display videos -->
+                            <video controls style="max-width: 100%;">
+                                <source src="/uploads/<%= post.file %>" type="video/<%= fileExtension %>">
+                                Your browser does not support the video tag.
+                            </video>
+
+                    <% } else if (['pdf'].includes(fileExtension)) { %>
+                                <!-- Display PDF preview -->
+                                <iframe src="/uploads/<%= post.file %>" width="100%"
+                                    height="500px"></iframe>
+
+                    <% } else { %>
+                                    <!-- For other file types, provide a download link -->
+                                    <a href="/uploads/<%= post.file %>" target="_blank">Download <%=
+                                            post.file %></a>
+                    <% } %>
+
+            <% } %>
+
+            <p><%= post.content %></p>
+            <h6><%= post.author %></h6>
+
+            <a href="/">Back</a>
+        </div>
+    <% } %>
+</body>
+</html>

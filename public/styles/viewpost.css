@@ -1,0 +1,83 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Dark Theme Styling */
+body {
+    background: #121212;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main Container */
+.container {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Post Title */
+h3 {
+    font-size: 1.8rem;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+/* Post Content */
+p {
+    font-size: 1rem;
+    color: #b0b0b0;
+    line-height: 1.5;
+}
+
+/* Author */
+h6 {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 15px;
+}
+
+/* Media Styling */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+/* Download/Action Buttons */
+a {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #bb86fc;
+    color: #121212;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+a:hover {
+    background: #ffcc00;
+    color: #121212;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+}

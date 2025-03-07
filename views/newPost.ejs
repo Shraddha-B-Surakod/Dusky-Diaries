@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New post</title>
-    <link rel="stylesheet" href="/public/styles/newpost.css">
+    <link rel="stylesheet" href="/styles/newpost.css">
 </head>
 
 <body>
@@ -16,14 +16,16 @@
         Get everything ready set and go click on the "Create Post" and make it public.
     </p>
     <div class="newpost">
-        <form action="/new" method="post" id="main-form">
-            <input type="name" placeholder="Name" name="heading" required>
+        <form action="/new" method="post" id="main-form" enctype="multipart/form-data">
+            <input type="name" placeholder="Name" name="title" required>
             <textarea name="content" id="content" placeholder="The content" required></textarea>
             <input type="text" name="author" placeholder="Author" required>
-            <input type="file" name="file">
+            <input type="file" name="postFile"><br>
+            <p class="formp">You cannot change the files once uploaded. So, carefully choose the files.</p>
+            <input type="submit" value="Create Post" id="submit">
         </form>
 
-        <input type="submit" value="Create Post" id="submit">
+        
     </div>
 
 </body>
