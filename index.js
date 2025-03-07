@@ -1,9 +1,9 @@
 import express from "express";
 import bodyParser from "body-parser";
-import posts from "./posts.json" assert { type: "json" };
 import fs from "fs";
 import multer from "multer";
 import path from "path";
+const posts = JSON.parse(fs.readFileSync("./posts.json", "utf8"));
 
 const app = express();
 const port = 3000;
