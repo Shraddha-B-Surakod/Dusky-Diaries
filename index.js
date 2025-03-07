@@ -1,10 +1,10 @@
 import express from "express";
 import bodyParser from "body-parser";
+import posts from "./posts.json" assert { type: "json" };
 import fs from "fs";
 import multer from "multer";
 import path from "path";
 
-const posts = require("./posts.json"); // Use require instead of import
 const app = express();
 const port = 3000;
 
